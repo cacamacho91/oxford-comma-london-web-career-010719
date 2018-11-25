@@ -1,11 +1,10 @@
 def oxford_comma(array)
-  return_string = ""
-  
-  array.each_with_index do |item, index|
-    if index+1 == array.size
-      return_string << " and #{item}"
-    else
-      return_string << "#{item}, "
-    end
+  case array.size
+  when 1
+    return array[0]
+  when 2
+    return "#{array[0]} and #{array[1]}"
+  when 3
+    return "#{array[0]}, #{array[1]} and #{array[2]}"
   end
 end
